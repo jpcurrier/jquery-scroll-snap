@@ -1,6 +1,6 @@
 # jQuery Scroll Snap
 
-This jQuery plugin snaps the browser window to the top of specified elements when the user scrolls within a certain proximity of that specified element's top. Requires jQuery 1.7+.
+This jQuery plugin snaps the browser window to the top of specified elements when the user scrolls within a certain proximity of specified element tops. Requires jQuery 1.7+.
 
 This plugin more-or-less mirrors the behavior of CSS Scroll Snaps (https://drafts.csswg.org/css-scroll-snap/), which are not, as of the writing of this plugin, widely supported yet: http://caniuse.com/#feat=css-snappoints
 
