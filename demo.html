@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery Scroll Snap</title>
+  <link rel="stylesheet" href="jquery-scroll-snap/jquery-scroll-snap.css">
+  <style>
+    /* demo layout styles: *
+     * not necessary for use of plugin */
+    html,
+    body,
+    section{
+      height: 100%;
+    }
+    body{
+      margin: 0;
+      font: 700 16px/24px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    body:before,
+    body:after{
+      content: '';
+      position: absolute;
+      right: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      z-index: 1;
+      border-top: 40px solid;
+      border-right: 40px solid transparent;
+      border-left: 40px solid transparent;
+      margin: 0 auto;
+      -webkit-animation: wobble 2s ease-in-out infinite;
+    	animation: wobble 2s ease-in-out infinite;
+    }
+    body:before{
+      bottom: 20px;
+      border-top-color: #292929;
+    }
+    body:after{
+      bottom: 32px;
+      border-top-color: #f2f2f2;
+    }
+    @-webkit-keyframes wobble{
+    	0%,
+      100%{
+        -webkit-transform: translateY( -50% );
+      }
+    	50%{
+        -webkit-transform: translateY( 0% );
+      }
+    }
+    @keyframes wobble{
+    	0%,
+      100%{
+        transform: translateY( -50% );
+      }
+    	50%{
+        transform: translateY( 0% );
+      }
+    }
+    section:nth-child( odd ){
+      background-color: #f2f2f2;
+    }
+    section:nth-child( even ){
+      background-color: #d9d9d9;
+    }
+    .snap{
+      position: relative;
+    }
+    .snap:before,
+    .snap:after{
+      position: absolute;
+      right: 0;
+      left: 0;
+      margin: 0 auto;
+    }
+    .snap:before{
+      content: '';
+      top: 0;
+      width: 0;
+      border-right: 12px solid transparent;
+      border-bottom: 12px solid #000;
+      border-left: 12px solid transparent;
+    }
+    .snap:after{
+      content: 'snap';
+      top: 12px;
+      width: 50px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="snap"></section>
+  <section class="snap"></section>
+  <section class="snap"></section>
+  <section class="snap"></section>
+  <section class="snap"></section>
+  <section class="snap"></section>
+  <section class="snap"></section>
+  <section class="snap"></section>
+  <section class="snap"></section>
+  <section></section>
+  <section></section>
+  <section></section>
+  <section></section>
+  <section></section>
+  <section></section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="jquery-scroll-snap/jquery-scroll-snap.js"></script>
+  <script>
+    $( '.snap' ).scrollSnap();
+  </script>
+</body>
+
+</html>
